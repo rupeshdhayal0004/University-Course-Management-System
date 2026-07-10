@@ -1,4 +1,4 @@
-# University-Course-Management-System-UCMS-
+# University-Course-Management-System-(UCMS)
 University Course Management System
 
 A DBMS course project implementing a course registration and analytics system for a university, built in four phases: database design, a Flask REST API backend, and a Streamlit analytics dashboard.
