@@ -1,104 +1,171 @@
-# University-Course-Management-System-(UCMS)
-University Course Management System
+# University Course Management System
 
-A DBMS course project implementing a course registration and analytics system for a university, built in four phases: database design, a Flask REST API backend, and a Streamlit analytics dashboard.
+A full-stack **Database Management System (DBMS)** project that provides a complete solution for managing university course registration, student records, teacher assignments, and analytics.
 
-Project Structure
+The project is developed in four phases, covering database design, backend API development, and an interactive analytics dashboard.
 
+---
+
+## Features
+
+* Student registration
+* Course management
+* Teacher management
+* Course enrollment
+* Credit limit validation
+* Department and semester-wise course listing
+* Interactive analytics dashboard
+* RESTful API using Flask
+
+---
+
+## Tech Stack
+
+| Technology | Purpose            |
+| ---------- | ------------------ |
+| SQLite     | Database           |
+| Flask      | Backend REST API   |
+| Streamlit  | Frontend Dashboard |
+| Pandas     | Data Analysis      |
+
+---
+
+## Project Structure
+
+```text
 University_course_Project/
+│
 ├── database/
-│   └── university.db              # SQLite database file
+│   └── university.db
+│
 ├── phase2_database_design/
-│   ├── schema.sql                 # Table definitions + seed data
-│   └── create_database.py         # Script to build the DB from schema.sql
+│   ├── schema.sql
+│   └── create_database.py
+│
 ├── phase3_backend_flask/
-│   ├── app.py                     # Flask REST API
-│   └── database.py                # DB connection helper
+│   ├── app.py
+│   └── database.py
+│
 └── phase4_analytics_streamlit/
-    ├── dashboard.py                # Streamlit dashboard entry point
-    ├── add_student.py              # Student registration UI
-    ├── view_students.py            # View/browse students
-    ├── teachers.py                 # Teacher management
-    └── analytics.py                # Analytics & reports
+    ├── dashboard.py
+    ├── add_student.py
+    ├── view_students.py
+    ├── teachers.py
+    └── analytics.py
+```
 
-Database Schema
+---
 
-The database has three core tables:
+## Database Schema
 
-students — roll number (PK), name, department
+### Students
 
-courses — course id (PK), code, name, department, semester, type (core/elective), credits
+* Roll Number *(Primary Key)*
+* Name
+* Department
 
-student_courses — join table linking students to their registered courses
+### Courses
 
-teachers / teacher_courses — teacher records and their course assignments
+* Course ID *(Primary Key)*
+* Course Code
+* Course Name
+* Department
+* Semester
+* Course Type *(Core/Elective)*
+* Credits
 
-Tech Stack
+### Student Courses
 
-Database: SQLite
+Maps students to the courses they are enrolled in.
 
-Backend: Flask (Python REST API)
+### Teachers
 
-Frontend/Analytics: Streamlit
+Stores teacher information.
 
-Getting Started
+### Teacher Courses
 
-1. Clone the repo
+Maps teachers to the courses they teach.
 
-git clone <your-repo-url>
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/University_course_Project.git
 cd University_course_Project
+```
 
-2. Install dependencies
+### 2. Install Dependencies
 
+```bash
 pip install flask streamlit pandas
+```
 
-3. Build the database (if needed)
+### 3. Create the Database
 
+```bash
 cd phase2_database_design
 python create_database.py
+```
 
-4. Run the Flask backend
+### 4. Start the Flask Server
 
+```bash
 cd phase3_backend_flask
 python app.py
+```
 
-5. Run the Streamlit dashboard
+### 5. Launch the Streamlit Dashboard
 
+```bash
 cd phase4_analytics_streamlit
 streamlit run dashboard.py
+```
 
-API Endpoints (Flask)
+---
 
-Method
+## API Endpoints
 
-Endpoint
+| Method | Endpoint                           | Description                              |
+| ------ | ---------------------------------- | ---------------------------------------- |
+| GET    | `/courses/<department>/<semester>` | Retrieve available courses               |
+| POST   | `/register_student`                | Register a student and enroll in courses |
+| GET    | `/students`                        | Retrieve all registered students         |
 
-Description
+---
 
-GET
+## Project Workflow
 
-/courses/<dept>/<semester>
+```
+SQLite Database
+        │
+        ▼
+Flask REST API
+        │
+        ▼
+Streamlit Dashboard
+        │
+        ▼
+Analytics & Reports
+```
 
-Get core & elective courses for a department/semester
+---
 
-POST
+## Future Enhancements
 
-/register_student
+* User authentication
+* Admin dashboard
+* Student login portal
+* Attendance management
+* Grade management
+* Email notifications
+* Data visualization with charts
+* Export reports to PDF and Excel
 
-Register a student and enroll them in courses (with credit-limit validation)
+---
 
-GET
+## 👨‍💻 Author
 
-/students
-
-List all registered students
-
-
-
-Author
-
-Built as a DBMS course project.
-
-Author
-
-Built as a DBMS course project.
+Developed as a **Database Management System (DBMS)** course project to demonstrate full-stack database application development using **SQLite**, **Flask**, and **Streamlit**.
