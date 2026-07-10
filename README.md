@@ -166,6 +166,6 @@ Analytics & Reports
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Developed as a **Database Management System (DBMS)** course project to demonstrate full-stack database application development using **SQLite**, **Flask**, and **Streamlit**.
